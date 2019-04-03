@@ -39,7 +39,7 @@ function CharacterStats(attrs){
   this.healthPoints = attrs.healthPoints;
 
   this.takeDamage = function(){
-    return '<object name> took damage.';
+    return  `${this.name} took damage.`;
   };
 
   /*
@@ -68,7 +68,7 @@ function Humanoid(attrs){
   this.language = attrs.language;
 
   this.greet = function(){
-      return '<object name> offers a greeting in <object language>.';
+      return `${this.name} offers a greeting in ${this.language}.`;
   };
 
   /*
