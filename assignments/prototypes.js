@@ -16,6 +16,16 @@
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 
+function GameObject(createdAt, name, dimesnions){
+  this.createdAt = createdAt;
+  this.name = name;
+  this.dimesnions = dimesnions;
+
+  this.destory() = function(){
+    return `${this.name} was removed from the game`;
+  };
+};
+
 /*
   === CharacterStats ===
   * healthPoints
