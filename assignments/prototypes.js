@@ -19,7 +19,7 @@
 function GameObject(attrs){
   this.createdAt = attrs.createdAt;
   this.name = attrs.name;
-  this.dimesnions = attrs.dimesnions;
+  this.dimensions = attrs.dimensions;
 
   this.destroy = function(){
     return `${this.name} was removed from the game`;
@@ -34,17 +34,20 @@ function GameObject(attrs){
 */
 
 function CharacterStats(attrs){
+  GameObject.call(this, attrs);
+
   this.healthPoints = attrs.healthPoints;
 
   this.takeDamage = function(){
     return '<object name> took damage.';
   };
 
+  /*
   this.createdAt = GameObject.createdAt;
   this.name = GameObject.name;
   this.dimensions = GameObject.dimensions;
 
-  this.destroy = GameObject.destroy;
+  this.destroy = GameObject.destroy;*/
 };
 
 /*
@@ -58,6 +61,8 @@ function CharacterStats(attrs){
 */
 
 function Humanoid(attrs){
+  CharacterStats.call(this, attrs);
+
   this.team = attrs.team;
   this.weapons = attrs.weapons;
   this.language = attrs.language;
@@ -66,13 +71,14 @@ function Humanoid(attrs){
       return '<object name> offers a greeting in <object language>.';
   };
 
+  /*
   this.healthPoints = CharacterStats.healthPoints;
   this.createdAt = CharacterStats.createdAt;
   this.name = CharacterStats.name;
   this.dimensions = CharacterStats.dimensions;
 
   this.destroy = CharacterStats.destroy;
-  this.takeDamage = CharacterStats.takeDamage;
+  this.takeDamage = CharacterStats.takeDamage;*/
 };
  
 /*
@@ -134,6 +140,7 @@ function Humanoid(attrs){
   });
 
   console.log(mage.createdAt); // Today's date
+  //debugger;
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
   console.log(mage.name); // Bruce
