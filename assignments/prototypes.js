@@ -21,7 +21,7 @@ function GameObject(createdAt, name, dimesnions){
   this.name = name;
   this.dimesnions = dimesnions;
 
-  this.destory() = function(){
+  this.destory = function(){
     return `${this.name} was removed from the game`;
   };
 };
@@ -32,6 +32,16 @@ function GameObject(createdAt, name, dimesnions){
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
+
+function CharacterStats(healthPoints){
+  this.healthPoints = healthPoints;
+
+  this.takeDamage = function(){
+    return '<object name> took damage.';
+  }
+
+  this.destory = GameObject.destory;
+}
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
